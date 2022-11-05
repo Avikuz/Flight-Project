@@ -124,14 +124,12 @@
 
 <body>
   <div class="wrapper">
-    <h1>Sign Up</h1>
-    <p>Welcome to Cab Man Service <br> Signup Here</p>
+    <h1>Login</h1>
+    <p>Welcome to Cab Man Service <br> Login Here</p>
     <form id="loginform">
       <input type="text" placeholder="Enter mail" name="email" id="email"
         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
       <input type="password" placeholder="Password" id="pass" name="pass" minlength="8" maxlength="25" required>
-      <input type="password" placeholder="Confirm Password" id="conf_pass" name="conf_pass" minlength="8" maxlength="25"
-        required>
       <p class="recover">
         <a href="#">Recover Password</a>
       </p>
@@ -144,37 +142,10 @@
         <i class="fab fa-facebook"></i>
       </div>
       <div class="not-member">
-        Already a member? <a href="./login.html">Login Now</a>
+        Not a member? <a href="./signup.html">Register Now</a>
       </div>
   </div>
   </form>
-  <script>
-    var email = document.forms['loginform']['email'];
-    var password = document.forms['loginform']['pass'];
-    var cpassword = document.forms['loginform']['conf_pass'];
-    var btn = document.getElementById('btn-login');
-    document.querySelectorAll('#loginform input').forEach(e => {
-      e.addEventListener('keyup', function (event) {
-        console.log('added')
-        var isValid = true;
-        if (!email.validity.valid || !password.validity.valid) {
-          isValid = false;
-        }
-
-        if (password.value != cpassword.value) {
-          isValid = false;
-          console.log('invalid password')
-        }
-
-        if (!isValid) {
-          btn.setAttribute('disabled', true)
-        }
-        else {
-          btn.removeAttribute('disabled');
-        }
-      })
-    });
-  </script>
 </body>
 
 </html> 
